@@ -1,0 +1,11 @@
+server:
+  port: 19221
+spring:
+  application:
+    name: order-service
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://admin:123456@localhost:19200/eureka/,http://admin:123456@localhost:19201/eureka/
