@@ -9,4 +9,6 @@ public interface OrderService {
     String productModelNumber(String model, Integer number);
 
     Map<String, String> productParam(String name);
+
+    Map<String, String> productInfo(Map<String, String> info);
 }

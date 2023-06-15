@@ -19,11 +19,17 @@ public class StockController {
         return "MODEL:" + model + " NUMBER" + number;
     }
 
-    @GetMapping("/product/{name}")
+    @GetMapping("/product/param/{name}")
     public Map<String, String> productParam(@PathVariable String name) {
         Map<String, String> param = new HashMap<>();
         param.put("name", name);
         param.put("brand", "Apple");
         return param;
+    }
+
+    @PostMapping("/product/info")
+    public Map<String, String> productInfo(@RequestBody Map<String, String> info) {
+        info.put("key", "change");
+        return info;
     }
 }

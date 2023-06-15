@@ -1,11 +1,10 @@
 package xyz.hooy.order.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import xyz.hooy.order.service.OrderService;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -26,7 +25,15 @@ public class OrderController {
     }
 
     @GetMapping("/product/param")
-    Map<String, String> productParam() {
+    public Map<String, String> productParam() {
         return orderService.productParam("hooy");
+    }
+
+    @GetMapping("/product/info")
+    public Map<String, String> productInfo() {
+        Map<String, String> map = new HashMap<>();
+        map.put("key", "no-change");
+        map.put("value", "value");
+        return orderService.productInfo(map);
     }
 }

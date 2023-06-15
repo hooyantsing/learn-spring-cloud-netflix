@@ -19,11 +19,17 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public String productModelNumber(String model, Integer number){
-        return stockFeign.productModelNumber(model,number);
+    public String productModelNumber(String model, Integer number) {
+        return stockFeign.productModelNumber(model, number);
     }
 
-    public Map<String, String> productParam(String name){
+    @Override
+    public Map<String, String> productParam(String name) {
         return stockFeign.productParam(name);
+    }
+
+    @Override
+    public Map<String, String> productInfo(Map<String, String> info) {
+        return stockFeign.productInfo(info);
     }
 }
