@@ -15,4 +15,8 @@ public interface OrderService {
     Map<String, String> bodyMap(Map<String, String> info);
 
     OrderDTO bodyModel(OrderDTO order);
+
+    String timeout();
+
+    String serviceException();
 }

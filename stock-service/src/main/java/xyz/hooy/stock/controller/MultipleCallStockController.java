@@ -8,7 +8,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/stock")
-public class StockController {
+public class MultipleCallStockController {
 
     @GetMapping("/non-param")
     public String nonParam() {

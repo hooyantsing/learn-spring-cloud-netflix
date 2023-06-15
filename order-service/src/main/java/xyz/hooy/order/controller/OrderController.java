@@ -47,4 +47,14 @@ public class OrderController {
         order.setDate(new Date());
         return orderService.bodyModel(order);
     }
+
+    @GetMapping("/timeout")
+    public String timeout() {
+        return orderService.timeout();
+    }
+
+    @GetMapping("/service-exception")
+    public String serviceException() {
+        return orderService.serviceException();
+    }
 }
