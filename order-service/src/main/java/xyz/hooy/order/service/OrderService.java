@@ -1,14 +1,18 @@
 package xyz.hooy.order.service;
 
+import xyz.hooy.order.model.OrderDTO;
+
 import java.util.Map;
 
 public interface OrderService {
 
-    String productName();
+    String nonParam();
 
-    String productModelNumber(String model, Integer number);
+    String queryString(String model, Integer number);
 
-    Map<String, String> productParam(String name);
+    Map<String, String> pathString(String name);
 
-    Map<String, String> productInfo(Map<String, String> info);
+    Map<String, String> bodyMap(Map<String, String> info);
+
+    OrderDTO bodyModel(OrderDTO order);
 }

@@ -2,21 +2,25 @@ package xyz.hooy.order.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
+import xyz.hooy.order.model.OrderDTO;
 
 import java.util.Map;
 
 @FeignClient(value = "stock-service", path = "/stock")
 public interface StockFeign {
 
-    @GetMapping("/product/name")
-    String productName();
+    @GetMapping("/non-param")
+    String nonParam();
 
-    @GetMapping("/product/model-number")
-    String productModelNumber(@RequestParam String model, @RequestParam Integer number);
+    @GetMapping("/query-string")
+    String queryString(@RequestParam String model, @RequestParam Integer number);
 
-    @GetMapping("/product/param/{name}")
-    Map<String, String> productParam(@PathVariable String name);
+    @GetMapping("/path-string/{name}")
+    Map<String, String> pathString(@PathVariable String name);
 
-    @PostMapping("/product/info")
-    Map<String, String> productInfo(@RequestBody Map<String, String> info);
+    @PostMapping("/body-map")
+    Map<String, String> bodyMap(@RequestBody Map<String, String> info);
+
+    @PostMapping("/body-model")
+    OrderDTO bodyModel(@RequestBody OrderDTO order);
 }

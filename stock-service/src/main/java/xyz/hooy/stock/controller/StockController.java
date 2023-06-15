@@ -1,6 +1,7 @@
 package xyz.hooy.stock.controller;
 
 import org.springframework.web.bind.annotation.*;
+import xyz.hooy.stock.model.OrderDTO;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,27 +10,33 @@ import java.util.Map;
 @RequestMapping("/stock")
 public class StockController {
 
-    @GetMapping("/product/name")
-    public String productName() {
+    @GetMapping("/non-param")
+    public String nonParam() {
         return "MacBook Pro";
     }
 
-    @GetMapping("/product/model-number")
-    public String productModelNumber(@RequestParam String model, @RequestParam String number) {
+    @GetMapping("/query-string")
+    public String queryString(@RequestParam String model, @RequestParam String number) {
         return "MODEL:" + model + " NUMBER" + number;
     }
 
-    @GetMapping("/product/param/{name}")
-    public Map<String, String> productParam(@PathVariable String name) {
+    @GetMapping("/path-string/{name}")
+    public Map<String, String> pathString(@PathVariable String name) {
         Map<String, String> param = new HashMap<>();
         param.put("name", name);
         param.put("brand", "Apple");
         return param;
     }
 
-    @PostMapping("/product/info")
-    public Map<String, String> productInfo(@RequestBody Map<String, String> info) {
+    @PostMapping("/body-map")
+    public Map<String, String> bodyMap(@RequestBody Map<String, String> info) {
         info.put("key", "change");
         return info;
+    }
+
+    @PostMapping("/body-model")
+    public OrderDTO bodyModel(@RequestBody OrderDTO order) {
+        order.setName("change");
+        return order;
     }
 }
