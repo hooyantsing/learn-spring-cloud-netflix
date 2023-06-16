@@ -1,0 +1,18 @@
+server:
+  port: 19000
+spring:
+  application:
+    name: zuul-gateway
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://admin:123456@localhost:19200/eureka/,http://admin:123456@localhost:19201/eureka/
+zuul:
+  prefix: /api # 路由前缀
+  ignored-services: stock-service # 服务名称排除，多个服务逗号分隔，* 排除所有
+  routes:
+    order-service: # 路由 id 自定义
+      path: /order/** # 配置网关路径
+      serviceId: order-service # 配置映射服务

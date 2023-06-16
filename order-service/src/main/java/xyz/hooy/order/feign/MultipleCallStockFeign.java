@@ -6,7 +6,7 @@ import xyz.hooy.order.model.OrderDTO;
 
 import java.util.Map;
 
-@FeignClient(value = "stock-service", path = "/stock", contextId = "multipleCallStockFeign")
+@FeignClient(value = "stock-service", path = "/producer", contextId = "multipleCallStockFeign")
 public interface MultipleCallStockFeign {
 
     /**

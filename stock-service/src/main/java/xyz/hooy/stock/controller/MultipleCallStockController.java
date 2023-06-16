@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/stock")
+@RequestMapping("/producer")
 public class MultipleCallStockController {
 
     @GetMapping("/non-param")
