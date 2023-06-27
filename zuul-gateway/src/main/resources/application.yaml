@@ -16,3 +16,9 @@ zuul:
     order-service: # 路由 id 自定义
       path: /order/** # 配置网关路径
       serviceId: order-service # 配置映射服务
+management:
+  endpoints:
+    web:
+      exposure:
+        # hystrix-dashboard 访问接口
+        include: hystrix.stream
