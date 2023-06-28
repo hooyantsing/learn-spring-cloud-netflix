@@ -1,18 +1,2 @@
 server:
   port: 19210
-spring:
-  application:
-    name: stock-service
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://admin:123456@localhost:19200/eureka/,http://admin:123456@localhost:19201/eureka/
-# OpenFeign 开启 gzip 压缩
-feign:
-  compression:
-    request:
-      enabled: true
-    response:
-      enabled: true

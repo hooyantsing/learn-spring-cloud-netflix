@@ -1,13 +1,6 @@
 server:
   port: 19200
-spring:
-  application:
-    name: eureka-discovery
 eureka:
-  instance:
-    hostname: localhost
   client:
-    register-with-eureka: true # 是否将自己注册到注册中心，默认：true
-    fetch-registry: true # 是否从注册中心获取服务信息，默认：ture
     service-url:
       defaultZone: http://admin:123456@${eureka.instance.hostname}:19201/eureka/

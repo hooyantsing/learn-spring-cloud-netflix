@@ -1,21 +1,2 @@
 server:
   port: 19221
-spring:
-  application:
-    name: order-service
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://admin:123456@localhost:19200/eureka/,http://admin:123456@localhost:19201/eureka/
-feign:
-  # OpenFeign 开启 gzip 压缩
-  compression:
-    request:
-      enabled: true
-    response:
-      enabled: true
-  # OpenFeign 整合 Hystrix，旧版本：feign.hystrix.enabled=true
-  circuitbreaker:
-    enabled: true
