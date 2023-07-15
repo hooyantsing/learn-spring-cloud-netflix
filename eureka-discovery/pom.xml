@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>xyz.hooy</groupId>
+		<groupId>xyz.hooy.lscn</groupId>
 		<artifactId>learn-spring-cloud-netflix</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>xyz.hooy</groupId>
+    <groupId>xyz.hooy.lscn</groupId>
 	<artifactId>eureka-discovery</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>eureka-discovery</name>

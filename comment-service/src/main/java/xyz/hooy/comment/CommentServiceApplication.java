@@ -1,12 +1,12 @@
-package xyz.hooy.order;
+package xyz.hooy.comment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OrderServiceApplication {
+public class CommentServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OrderServiceApplication.class, args);
+        SpringApplication.run(CommentServiceApplication.class, args);
     }
 }

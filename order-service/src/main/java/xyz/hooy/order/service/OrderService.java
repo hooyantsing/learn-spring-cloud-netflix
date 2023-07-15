@@ -1,22 +1,24 @@
 package xyz.hooy.order.service;
 
-import xyz.hooy.order.model.OrderDTO;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import xyz.hooy.detail.api.remote.DetailRemote;
+import xyz.hooy.detail.api.entity.Detail;
+import xyz.hooy.order.entity.OrderWithDetail;
+import xyz.hooy.order.api.entity.Order;
+import xyz.hooy.order.dao.OrderDao;
 
-import java.util.Map;
+@Service
+@RequiredArgsConstructor
+public class OrderService {
 
-public interface OrderService {
+    private final OrderDao orderDao;
 
-    String nonParam();
+    private DetailRemote detailRemote;
 
-    String queryString(String model, Integer number);
-
-    Map<String, String> pathString(String name);
-
-    Map<String, String> bodyMap(Map<String, String> info);
-
-    OrderDTO bodyModel(OrderDTO order);
-
-    String timeout();
-
-    String serviceException();
+    public OrderWithDetail getOrder() {
+        Order order = orderDao.getOrder();
+        Detail detail = detailRemote.getDetailByOrderId(order.getId());
+        return new OrderWithDetail(order, detail);
+    }
 }

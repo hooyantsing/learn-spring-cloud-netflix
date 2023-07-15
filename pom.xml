@@ -8,7 +8,7 @@
         <version>2.3.12.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>xyz.hooy</groupId>
+    <groupId>xyz.hooy.lscn</groupId>
     <artifactId>learn-spring-cloud-netflix</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -17,8 +17,12 @@
     <modules>
         <module>eureka-discovery</module>
         <module>zuul-gateway</module>
-        <module>stock-service</module>
+        <module>comment-service</module>
+        <module>comment-service-api</module>
+        <module>detail-service</module>
+        <module>detail-service-api</module>
         <module>order-service</module>
+        <module>order-service-api</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

@@ -1,8 +1,8 @@
 server:
-  port: 10000
+  port: 12000
 spring:
   application:
-    name: order-service
+    name: comment-service
 eureka:
   instance:
     hostname: localhost
