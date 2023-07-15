@@ -15,7 +15,7 @@ public class DetailService {
 
     private final DetailDao detailDao;
 
-    private CommentRemote commentRemote;
+    private final CommentRemote commentRemote;
 
     public Detail getDetailById(Long id) {
         long i = id;

@@ -30,7 +30,7 @@
         </dependency>
 
         <!--基于 ratelimit 实现的限流-->
-        <dependency>
+        <!--<dependency>
             <groupId>com.marcosbarbero.cloud</groupId>
             <artifactId>spring-cloud-zuul-ratelimit</artifactId>
             <version>1.7.5.RELEASE</version>
@@ -38,7 +38,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>

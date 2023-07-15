@@ -1,16 +1,24 @@
 package xyz.hooy.comment.api.remote;
 
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import xyz.hooy.comment.api.entity.Comment;
 
 import java.util.List;
 
+@FeignClient("comment-service")
 public interface CommentRemote {
 
-    Comment getCommentById(Long id);
+    @GetMapping("/getCommentById/{id}")
+    Comment getCommentById(@PathVariable("id") Long id);
 
-    List<Comment> getCommentsByDetailId(Long detailId);
+    @GetMapping("/getCommentsByDetailId/{detailId}")
+    List<Comment> getCommentsByDetailId(@PathVariable("detailId") Long detailId);
 
-    List<String> getCommentNamesByDetailId(Long detailId);
+    @GetMapping("/getCommentNamesByDetailId/{detailId}")
+    List<String> getCommentNamesByDetailId(@PathVariable("detailId") Long detailId);
 
-    List<String> getCommentContentsByDetailId(Long detailId);
+    @GetMapping("/getCommentContentsByDetailId/{detailId}")
+    List<String> getCommentContentsByDetailId(@PathVariable("detailId") Long detailId);
 }

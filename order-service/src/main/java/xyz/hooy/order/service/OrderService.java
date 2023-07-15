@@ -14,7 +14,7 @@ public class OrderService {
 
     private final OrderDao orderDao;
 
-    private DetailRemote detailRemote;
+    private final DetailRemote detailRemote;
 
     public OrderWithDetail getOrder() {
         Order order = orderDao.getOrder();

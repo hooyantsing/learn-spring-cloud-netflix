@@ -1,5 +1,5 @@
 server:
-  port: 19000
+  port: 18080
 spring:
   application:
     name: zuul-gateway
@@ -12,23 +12,14 @@ eureka:
 zuul:
   # 路由
   prefix: /api # 路由前缀
-  ignored-services: stock-service # 服务名称排除，多个服务逗号分隔，* 排除所有
+  ignored-services: comment-service # 服务名称排除，多个服务逗号分隔，* 排除所有
   routes:
     order-service: # 路由 id 自定义
-      path: /order/** # 配置网关路径
+      path: /order-service/** # 配置网关路径
       serviceId: order-service # 配置映射服务
-  # 限流
-  ratelimit:
-    enabled: true
-    repository: REDIS # 储存方式
-    policy-list:
-      order-service:
-        - limit: 5
-          refresh-interval: 60 # 限制 60s 内允许访问 5 次
-          type:
-            - user # 应用于用户
-            - origin # 应用于源IP
-            - url # 应用于URL
+    detail-service: # 路由 id 自定义
+      path: /detail-service/** # 配置网关路径
+      serviceId: detail-service # 配置映射服务
 management:
   endpoints:
     web:
